@@ -1,0 +1,7 @@
+
+State Machine - |Sequential_Multiplier_8bits|system_controller:sys_con|reg_fstate
+Name reg_fstate.S3 reg_fstate.S2 reg_fstate.S1 reg_fstate.S0 
+reg_fstate.S0 0 0 0 0 
+reg_fstate.S1 0 0 1 1 
+reg_fstate.S2 0 1 0 1 
+reg_fstate.S3 1 0 0 1 

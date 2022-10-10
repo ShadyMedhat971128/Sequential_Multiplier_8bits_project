@@ -1,0 +1,498 @@
+Classic Timing Analyzer report for Sequential_Multiplier_8bits
+Tue Oct 11 00:42:49 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                    ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                        ; To                                                          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.367 ns                         ; start                                                       ; system_controller:sys_con|counter[0]                        ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.232 ns                         ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; P[13]                                                       ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.798 ns                        ; B[0]                                                        ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 98.41 MHz ( period = 10.162 ns ) ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                             ;                                                             ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM2210F324C3      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                        ; To                                                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 98.41 MHz ( period = 10.162 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 9.719 ns                ;
+; N/A                                     ; 98.74 MHz ( period = 10.128 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 9.685 ns                ;
+; N/A                                     ; 107.43 MHz ( period = 9.308 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 8.865 ns                ;
+; N/A                                     ; 108.73 MHz ( period = 9.197 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 8.754 ns                ;
+; N/A                                     ; 110.24 MHz ( period = 9.071 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 8.628 ns                ;
+; N/A                                     ; 114.89 MHz ( period = 8.704 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 8.261 ns                ;
+; N/A                                     ; 115.34 MHz ( period = 8.670 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 8.227 ns                ;
+; N/A                                     ; 116.88 MHz ( period = 8.556 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 8.113 ns                ;
+; N/A                                     ; 116.99 MHz ( period = 8.548 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 8.105 ns                ;
+; N/A                                     ; 117.34 MHz ( period = 8.522 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 8.079 ns                ;
+; N/A                                     ; 117.45 MHz ( period = 8.514 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 8.071 ns                ;
+; N/A                                     ; 117.61 MHz ( period = 8.503 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 8.060 ns                ;
+; N/A                                     ; 118.08 MHz ( period = 8.469 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 8.026 ns                ;
+; N/A                                     ; 127.39 MHz ( period = 7.850 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 7.407 ns                ;
+; N/A                                     ; 129.22 MHz ( period = 7.739 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 7.296 ns                ;
+; N/A                                     ; 129.84 MHz ( period = 7.702 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 7.259 ns                ;
+; N/A                                     ; 129.97 MHz ( period = 7.694 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 7.251 ns                ;
+; N/A                                     ; 130.74 MHz ( period = 7.649 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 7.206 ns                ;
+; N/A                                     ; 131.35 MHz ( period = 7.613 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 7.170 ns                ;
+; N/A                                     ; 131.73 MHz ( period = 7.591 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 7.148 ns                ;
+; N/A                                     ; 131.87 MHz ( period = 7.583 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 7.140 ns                ;
+; N/A                                     ; 132.66 MHz ( period = 7.538 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 7.095 ns                ;
+; N/A                                     ; 133.80 MHz ( period = 7.474 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 7.031 ns                ;
+; N/A                                     ; 133.96 MHz ( period = 7.465 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 7.022 ns                ;
+; N/A                                     ; 134.10 MHz ( period = 7.457 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 7.014 ns                ;
+; N/A                                     ; 134.41 MHz ( period = 7.440 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 6.997 ns                ;
+; N/A                                     ; 134.92 MHz ( period = 7.412 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 6.969 ns                ;
+; N/A                                     ; 134.99 MHz ( period = 7.408 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 6.965 ns                ;
+; N/A                                     ; 137.68 MHz ( period = 7.263 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 6.820 ns                ;
+; N/A                                     ; 149.10 MHz ( period = 6.707 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 6.264 ns                ;
+; N/A                                     ; 149.86 MHz ( period = 6.673 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 6.230 ns                ;
+; N/A                                     ; 151.06 MHz ( period = 6.620 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 6.177 ns                ;
+; N/A                                     ; 152.18 MHz ( period = 6.571 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 6.128 ns                ;
+; N/A                                     ; 152.98 MHz ( period = 6.537 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 6.094 ns                ;
+; N/A                                     ; 153.63 MHz ( period = 6.509 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 6.066 ns                ;
+; N/A                                     ; 156.67 MHz ( period = 6.383 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 5.940 ns                ;
+; N/A                                     ; 160.13 MHz ( period = 6.245 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 5.802 ns                ;
+; N/A                                     ; 161.00 MHz ( period = 6.211 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 5.768 ns                ;
+; N/A                                     ; 168.07 MHz ( period = 5.950 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 5.507 ns                ;
+; N/A                                     ; 170.85 MHz ( period = 5.853 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 5.410 ns                ;
+; N/A                                     ; 172.27 MHz ( period = 5.805 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 5.362 ns                ;
+; N/A                                     ; 172.59 MHz ( period = 5.794 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 5.351 ns                ;
+; N/A                                     ; 172.83 MHz ( period = 5.786 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 5.343 ns                ;
+; N/A                                     ; 172.83 MHz ( period = 5.786 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 5.343 ns                ;
+; N/A                                     ; 172.83 MHz ( period = 5.786 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 5.343 ns                ;
+; N/A                                     ; 173.94 MHz ( period = 5.749 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 5.306 ns                ;
+; N/A                                     ; 174.16 MHz ( period = 5.742 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 5.299 ns                ;
+; N/A                                     ; 176.77 MHz ( period = 5.657 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 5.214 ns                ;
+; N/A                                     ; 177.02 MHz ( period = 5.649 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 5.206 ns                ;
+; N/A                                     ; 177.05 MHz ( period = 5.648 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 5.205 ns                ;
+; N/A                                     ; 177.05 MHz ( period = 5.648 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 5.205 ns                ;
+; N/A                                     ; 177.05 MHz ( period = 5.648 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 5.205 ns                ;
+; N/A                                     ; 178.06 MHz ( period = 5.616 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 5.173 ns                ;
+; N/A                                     ; 178.38 MHz ( period = 5.606 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 5.163 ns                ;
+; N/A                                     ; 178.44 MHz ( period = 5.604 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 5.161 ns                ;
+; N/A                                     ; 182.48 MHz ( period = 5.480 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 5.037 ns                ;
+; N/A                                     ; 183.42 MHz ( period = 5.452 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 5.009 ns                ;
+; N/A                                     ; 185.49 MHz ( period = 5.391 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 4.948 ns                ;
+; N/A                                     ; 189.39 MHz ( period = 5.280 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 4.837 ns                ;
+; N/A                                     ; 194.02 MHz ( period = 5.154 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 4.711 ns                ;
+; N/A                                     ; 195.08 MHz ( period = 5.126 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 4.683 ns                ;
+; N/A                                     ; 211.86 MHz ( period = 4.720 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 4.277 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; clk        ; clk      ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 214.82 MHz ( period = 4.655 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 218.58 MHz ( period = 4.575 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 4.132 ns                ;
+; N/A                                     ; 219.11 MHz ( period = 4.564 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 4.121 ns                ;
+; N/A                                     ; 219.88 MHz ( period = 4.548 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; clk        ; clk      ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 219.88 MHz ( period = 4.548 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 219.88 MHz ( period = 4.548 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 219.88 MHz ( period = 4.548 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 219.88 MHz ( period = 4.548 ns )                    ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 4.105 ns                ;
+; N/A                                     ; 220.75 MHz ( period = 4.530 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 4.087 ns                ;
+; N/A                                     ; 220.90 MHz ( period = 4.527 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 4.084 ns                ;
+; N/A                                     ; 222.57 MHz ( period = 4.493 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 4.050 ns                ;
+; N/A                                     ; 234.80 MHz ( period = 4.259 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 3.816 ns                ;
+; N/A                                     ; 235.40 MHz ( period = 4.248 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[4]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 237.30 MHz ( period = 4.214 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[4]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 3.771 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 3.629 ns                ;
+; N/A                                     ; 246.31 MHz ( period = 4.060 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 3.617 ns                ;
+; N/A                                     ; 247.89 MHz ( period = 4.034 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[4]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 3.591 ns                ;
+; N/A                                     ; 266.03 MHz ( period = 3.759 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[6]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 269.54 MHz ( period = 3.710 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 3.267 ns                ;
+; N/A                                     ; 271.59 MHz ( period = 3.682 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 3.239 ns                ;
+; N/A                                     ; 271.89 MHz ( period = 3.678 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[7]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 3.235 ns                ;
+; N/A                                     ; 275.79 MHz ( period = 3.626 ns )                    ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; clk        ; clk      ; None                        ; None                      ; 3.183 ns                ;
+; N/A                                     ; 277.85 MHz ( period = 3.599 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 3.156 ns                ;
+; N/A                                     ; 280.74 MHz ( period = 3.562 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 3.119 ns                ;
+; N/A                                     ; 284.41 MHz ( period = 3.516 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 287.94 MHz ( period = 3.473 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 3.030 ns                ;
+; N/A                                     ; 297.18 MHz ( period = 3.365 ns )                    ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[3]              ; clk        ; clk      ; None                        ; None                      ; 2.922 ns                ;
+; N/A                                     ; 297.18 MHz ( period = 3.365 ns )                    ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[4]              ; clk        ; clk      ; None                        ; None                      ; 2.922 ns                ;
+; N/A                                     ; 297.18 MHz ( period = 3.365 ns )                    ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[5]              ; clk        ; clk      ; None                        ; None                      ; 2.922 ns                ;
+; N/A                                     ; 297.18 MHz ( period = 3.365 ns )                    ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[6]              ; clk        ; clk      ; None                        ; None                      ; 2.922 ns                ;
+; N/A                                     ; 297.18 MHz ( period = 3.365 ns )                    ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[7]              ; clk        ; clk      ; None                        ; None                      ; 2.922 ns                ;
+; N/A                                     ; 297.35 MHz ( period = 3.363 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 2.920 ns                ;
+; N/A                                     ; 298.06 MHz ( period = 3.355 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; clk        ; clk      ; None                        ; None                      ; 2.912 ns                ;
+; N/A                                     ; 298.86 MHz ( period = 3.346 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 2.903 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[0]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[1]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[2]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[3]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[4]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[5]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[6]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 300.39 MHz ( period = 3.329 ns )                    ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[7]  ; clk        ; clk      ; None                        ; None                      ; 2.886 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 2.868 ns                ;
+; N/A                                     ; 303.58 MHz ( period = 3.294 ns )                    ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 2.851 ns                ;
+; N/A                                     ; 303.86 MHz ( period = 3.291 ns )                    ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; clk        ; clk      ; None                        ; None                      ; 2.848 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[4]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 2.840 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[5]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 2.789 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[5]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 2.755 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; clk        ; clk      ; None                        ; None                      ; 2.737 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[4]        ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[3]        ; clk        ; clk      ; None                        ; None                      ; 2.735 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[1]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[2]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[3]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[4]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[5]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[6]        ; clk        ; clk      ; None                        ; None                      ; 2.731 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[4]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 2.714 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[0]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[1]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[2]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[3]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[4]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[5]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[6]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[7]  ; clk        ; clk      ; None                        ; None                      ; 2.646 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S3                     ; system_controller:sys_con|counter[2]                        ; clk        ; clk      ; None                        ; None                      ; 2.607 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S3                     ; system_controller:sys_con|counter[1]                        ; clk        ; clk      ; None                        ; None                      ; 2.607 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S3                     ; system_controller:sys_con|counter[0]                        ; clk        ; clk      ; None                        ; None                      ; 2.607 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[7]  ; clk        ; clk      ; None                        ; None                      ; 2.587 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 2.568 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[5]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; clk        ; clk      ; None                        ; None                      ; 2.559 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S3                     ; system_controller:sys_con|out_done                          ; clk        ; clk      ; None                        ; None                      ; 2.501 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[1]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[2]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[3]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[4]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[5]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[6]        ; clk        ; clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[6]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 2.367 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S1                     ; system_controller:sys_con|out_load_product                  ; clk        ; clk      ; None                        ; None                      ; 2.263 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[0]                        ; system_controller:sys_con|reg_fstate.S1                     ; clk        ; clk      ; None                        ; None                      ; 2.223 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 2.198 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; clk        ; clk      ; None                        ; None                      ; 2.174 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 2.112 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S2                     ; system_controller:sys_con|out_shift_product                 ; clk        ; clk      ; None                        ; None                      ; 2.083 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[0]              ; clk        ; clk      ; None                        ; None                      ; 2.083 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; REG_8bits:From_B_to_multiplicand|reg_signal[2]              ; clk        ; clk      ; None                        ; None                      ; 2.083 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 2.016 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[2]                        ; system_controller:sys_con|reg_fstate.S1                     ; clk        ; clk      ; None                        ; None                      ; 1.984 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|out_shift_product                 ; clk        ; clk      ; None                        ; None                      ; 1.958 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|out_load_product                  ; clk        ; clk      ; None                        ; None                      ; 1.956 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|out_shift_multiplicand            ; clk        ; clk      ; None                        ; None                      ; 1.953 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|counter[2]                        ; clk        ; clk      ; None                        ; None                      ; 1.943 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|counter[1]                        ; clk        ; clk      ; None                        ; None                      ; 1.943 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|counter[0]                        ; clk        ; clk      ; None                        ; None                      ; 1.943 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7]        ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[6]        ; clk        ; clk      ; None                        ; None                      ; 1.901 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[5]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 1.824 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 1.779 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[1]                        ; system_controller:sys_con|reg_fstate.S1                     ; clk        ; clk      ; None                        ; None                      ; 1.765 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7]        ; clk        ; clk      ; None                        ; None                      ; 1.739 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; clk        ; clk      ; None                        ; None                      ; 1.721 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[3]        ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[2]        ; clk        ; clk      ; None                        ; None                      ; 1.694 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[1]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 1.679 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S2                     ; system_controller:sys_con|counter[2]                        ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S2                     ; system_controller:sys_con|counter[1]                        ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S2                     ; system_controller:sys_con|counter[0]                        ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[6]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 1.508 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S3                     ; system_controller:sys_con|reg_fstate.S0                     ; clk        ; clk      ; None                        ; None                      ; 1.370 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[0]                        ; system_controller:sys_con|counter[2]                        ; clk        ; clk      ; None                        ; None                      ; 1.368 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[0]                        ; system_controller:sys_con|reg_fstate.S3                     ; clk        ; clk      ; None                        ; None                      ; 1.367 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_multiplicand            ; system_controller:sys_con|out_shift_multiplicand            ; clk        ; clk      ; None                        ; None                      ; 1.359 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_load_product                  ; system_controller:sys_con|out_load_product                  ; clk        ; clk      ; None                        ; None                      ; 1.339 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S0                     ; system_controller:sys_con|reg_fstate.S1                     ; clk        ; clk      ; None                        ; None                      ; 1.329 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_reset_product                 ; system_controller:sys_con|out_reset_product                 ; clk        ; clk      ; None                        ; None                      ; 1.321 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; system_controller:sys_con|out_shift_product                 ; clk        ; clk      ; None                        ; None                      ; 1.316 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[2]        ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[1]        ; clk        ; clk      ; None                        ; None                      ; 1.303 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7]        ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7]        ; clk        ; clk      ; None                        ; None                      ; 1.302 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; clk        ; clk      ; None                        ; None                      ; 1.292 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; clk        ; clk      ; None                        ; None                      ; 1.291 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; clk        ; clk      ; None                        ; None                      ; 1.286 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[1]                        ; system_controller:sys_con|counter[2]                        ; clk        ; clk      ; None                        ; None                      ; 1.278 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[1]                        ; system_controller:sys_con|reg_fstate.S3                     ; clk        ; clk      ; None                        ; None                      ; 1.277 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[1]                        ; system_controller:sys_con|counter[1]                        ; clk        ; clk      ; None                        ; None                      ; 1.266 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; clk        ; clk      ; None                        ; None                      ; 1.241 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[6]        ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[5]        ; clk        ; clk      ; None                        ; None                      ; 1.237 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S2                     ; system_controller:sys_con|reg_fstate.S1                     ; clk        ; clk      ; None                        ; None                      ; 1.207 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|reg_fstate.S2                     ; system_controller:sys_con|reg_fstate.S3                     ; clk        ; clk      ; None                        ; None                      ; 1.204 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; REG_8bits:From_B_to_multiplicand|reg_signal[7]              ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[16] ; clk        ; clk      ; None                        ; None                      ; 1.192 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|out_shift_product                 ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7]        ; clk        ; clk      ; None                        ; None                      ; 1.176 ns                ;
+; N/A                                     ; Restricted to 304.04 MHz ( period = 3.289 ns )      ; system_controller:sys_con|counter[0]                        ; system_controller:sys_con|counter[1]                        ; clk        ; clk      ; None                        ; None                      ; 1.156 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                             ;                                                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                         ;
++-------+--------------+------------+-------+------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                                                   ; To Clock ;
++-------+--------------+------------+-------+------------------------------------------------------+----------+
+; N/A   ; None         ; 2.367 ns   ; start ; system_controller:sys_con|counter[2]                 ; clk      ;
+; N/A   ; None         ; 2.367 ns   ; start ; system_controller:sys_con|counter[1]                 ; clk      ;
+; N/A   ; None         ; 2.367 ns   ; start ; system_controller:sys_con|counter[0]                 ; clk      ;
+; N/A   ; None         ; 1.748 ns   ; rst   ; system_controller:sys_con|out_shift_product          ; clk      ;
+; N/A   ; None         ; 1.748 ns   ; rst   ; system_controller:sys_con|out_load_product           ; clk      ;
+; N/A   ; None         ; 1.748 ns   ; rst   ; system_controller:sys_con|out_shift_multiplicand     ; clk      ;
+; N/A   ; None         ; 1.720 ns   ; rst   ; system_controller:sys_con|out_done                   ; clk      ;
+; N/A   ; None         ; 1.561 ns   ; B[4]  ; REG_8bits:From_B_to_multiplicand|reg_signal[4]       ; clk      ;
+; N/A   ; None         ; 1.537 ns   ; B[3]  ; REG_8bits:From_B_to_multiplicand|reg_signal[3]       ; clk      ;
+; N/A   ; None         ; 1.535 ns   ; B[7]  ; REG_8bits:From_B_to_multiplicand|reg_signal[7]       ; clk      ;
+; N/A   ; None         ; 1.490 ns   ; A[5]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[5] ; clk      ;
+; N/A   ; None         ; 1.465 ns   ; A[7]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7] ; clk      ;
+; N/A   ; None         ; 1.424 ns   ; A[1]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[1] ; clk      ;
+; N/A   ; None         ; 1.407 ns   ; B[1]  ; REG_8bits:From_B_to_multiplicand|reg_signal[1]       ; clk      ;
+; N/A   ; None         ; 1.393 ns   ; A[0]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0] ; clk      ;
+; N/A   ; None         ; 1.374 ns   ; A[6]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[6] ; clk      ;
+; N/A   ; None         ; 1.367 ns   ; B[5]  ; REG_8bits:From_B_to_multiplicand|reg_signal[5]       ; clk      ;
+; N/A   ; None         ; 1.367 ns   ; start ; system_controller:sys_con|out_shift_product          ; clk      ;
+; N/A   ; None         ; 1.365 ns   ; start ; system_controller:sys_con|out_load_product           ; clk      ;
+; N/A   ; None         ; 1.364 ns   ; start ; system_controller:sys_con|out_shift_multiplicand     ; clk      ;
+; N/A   ; None         ; 1.353 ns   ; start ; system_controller:sys_con|out_reset_product          ; clk      ;
+; N/A   ; None         ; 1.352 ns   ; start ; system_controller:sys_con|reg_fstate.S0              ; clk      ;
+; N/A   ; None         ; 1.352 ns   ; start ; system_controller:sys_con|reg_fstate.S1              ; clk      ;
+; N/A   ; None         ; 1.328 ns   ; A[4]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[4] ; clk      ;
+; N/A   ; None         ; 1.306 ns   ; A[3]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[3] ; clk      ;
+; N/A   ; None         ; 1.188 ns   ; B[2]  ; REG_8bits:From_B_to_multiplicand|reg_signal[2]       ; clk      ;
+; N/A   ; None         ; 1.176 ns   ; A[2]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[2] ; clk      ;
+; N/A   ; None         ; 1.151 ns   ; B[6]  ; REG_8bits:From_B_to_multiplicand|reg_signal[6]       ; clk      ;
+; N/A   ; None         ; 1.144 ns   ; B[0]  ; REG_8bits:From_B_to_multiplicand|reg_signal[0]       ; clk      ;
++-------+--------------+------------+-------+------------------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                  ;
++-------+--------------+------------+-------------------------------------------------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From                                                        ; To    ; From Clock ;
++-------+--------------+------------+-------------------------------------------------------------+-------+------------+
+; N/A   ; None         ; 7.232 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13] ; P[13] ; clk        ;
+; N/A   ; None         ; 6.762 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[2]  ; P[2]  ; clk        ;
+; N/A   ; None         ; 6.729 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[6]  ; P[6]  ; clk        ;
+; N/A   ; None         ; 6.626 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[11] ; P[11] ; clk        ;
+; N/A   ; None         ; 6.602 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[9]  ; P[9]  ; clk        ;
+; N/A   ; None         ; 6.581 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[12] ; P[12] ; clk        ;
+; N/A   ; None         ; 6.456 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[10] ; P[10] ; clk        ;
+; N/A   ; None         ; 6.442 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[4]  ; P[4]  ; clk        ;
+; N/A   ; None         ; 6.287 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[8]  ; P[8]  ; clk        ;
+; N/A   ; None         ; 6.267 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[1]  ; P[1]  ; clk        ;
+; N/A   ; None         ; 6.134 ns   ; system_controller:sys_con|out_done                          ; done  ; clk        ;
+; N/A   ; None         ; 5.946 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[7]  ; P[7]  ; clk        ;
+; N/A   ; None         ; 5.905 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[3]  ; P[3]  ; clk        ;
+; N/A   ; None         ; 5.902 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[0]  ; P[0]  ; clk        ;
+; N/A   ; None         ; 5.748 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[5]  ; P[5]  ; clk        ;
+; N/A   ; None         ; 5.458 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[14] ; P[14] ; clk        ;
+; N/A   ; None         ; 5.380 ns   ; Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15] ; P[15] ; clk        ;
++-------+--------------+------------+-------------------------------------------------------------+-------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                ;
++---------------+-------------+-----------+-------+------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                                                   ; To Clock ;
++---------------+-------------+-----------+-------+------------------------------------------------------+----------+
+; N/A           ; None        ; -0.798 ns ; B[0]  ; REG_8bits:From_B_to_multiplicand|reg_signal[0]       ; clk      ;
+; N/A           ; None        ; -0.805 ns ; B[6]  ; REG_8bits:From_B_to_multiplicand|reg_signal[6]       ; clk      ;
+; N/A           ; None        ; -0.830 ns ; A[2]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[2] ; clk      ;
+; N/A           ; None        ; -0.842 ns ; B[2]  ; REG_8bits:From_B_to_multiplicand|reg_signal[2]       ; clk      ;
+; N/A           ; None        ; -0.960 ns ; A[3]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[3] ; clk      ;
+; N/A           ; None        ; -0.982 ns ; A[4]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[4] ; clk      ;
+; N/A           ; None        ; -1.006 ns ; start ; system_controller:sys_con|reg_fstate.S0              ; clk      ;
+; N/A           ; None        ; -1.006 ns ; start ; system_controller:sys_con|reg_fstate.S1              ; clk      ;
+; N/A           ; None        ; -1.007 ns ; start ; system_controller:sys_con|out_reset_product          ; clk      ;
+; N/A           ; None        ; -1.018 ns ; start ; system_controller:sys_con|out_shift_multiplicand     ; clk      ;
+; N/A           ; None        ; -1.019 ns ; start ; system_controller:sys_con|out_load_product           ; clk      ;
+; N/A           ; None        ; -1.021 ns ; B[5]  ; REG_8bits:From_B_to_multiplicand|reg_signal[5]       ; clk      ;
+; N/A           ; None        ; -1.021 ns ; start ; system_controller:sys_con|out_shift_product          ; clk      ;
+; N/A           ; None        ; -1.028 ns ; A[6]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[6] ; clk      ;
+; N/A           ; None        ; -1.047 ns ; A[0]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0] ; clk      ;
+; N/A           ; None        ; -1.061 ns ; B[1]  ; REG_8bits:From_B_to_multiplicand|reg_signal[1]       ; clk      ;
+; N/A           ; None        ; -1.078 ns ; A[1]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[1] ; clk      ;
+; N/A           ; None        ; -1.119 ns ; A[7]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[7] ; clk      ;
+; N/A           ; None        ; -1.144 ns ; A[5]  ; Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[5] ; clk      ;
+; N/A           ; None        ; -1.189 ns ; B[7]  ; REG_8bits:From_B_to_multiplicand|reg_signal[7]       ; clk      ;
+; N/A           ; None        ; -1.191 ns ; B[3]  ; REG_8bits:From_B_to_multiplicand|reg_signal[3]       ; clk      ;
+; N/A           ; None        ; -1.215 ns ; B[4]  ; REG_8bits:From_B_to_multiplicand|reg_signal[4]       ; clk      ;
+; N/A           ; None        ; -1.374 ns ; rst   ; system_controller:sys_con|out_done                   ; clk      ;
+; N/A           ; None        ; -1.402 ns ; rst   ; system_controller:sys_con|out_shift_product          ; clk      ;
+; N/A           ; None        ; -1.402 ns ; rst   ; system_controller:sys_con|out_load_product           ; clk      ;
+; N/A           ; None        ; -1.402 ns ; rst   ; system_controller:sys_con|out_shift_multiplicand     ; clk      ;
+; N/A           ; None        ; -2.021 ns ; start ; system_controller:sys_con|counter[2]                 ; clk      ;
+; N/A           ; None        ; -2.021 ns ; start ; system_controller:sys_con|counter[1]                 ; clk      ;
+; N/A           ; None        ; -2.021 ns ; start ; system_controller:sys_con|counter[0]                 ; clk      ;
++---------------+-------------+-----------+-------+------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Oct 11 00:42:49 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Sequential_Multiplier_8bits -c Sequential_Multiplier_8bits
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 98.41 MHz between source register "Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]" and destination register "Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15]" (period= 10.162 ns)
+    Info: + Longest register to register delay is 9.719 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X1_Y10_N3; Fanout = 15; REG Node = 'Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]'
+        Info: 2: + IC(1.861 ns) + CELL(0.125 ns) = 1.986 ns; Loc. = LC_X13_Y10_N9; Fanout = 1; COMB Node = 'adder_x[1]'
+        Info: 3: + IC(1.862 ns) + CELL(0.125 ns) = 3.973 ns; Loc. = LC_X1_Y10_N5; Fanout = 2; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|c[2]~0'
+        Info: 4: + IC(0.191 ns) + CELL(0.125 ns) = 4.289 ns; Loc. = LC_X1_Y10_N6; Fanout = 2; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|c[3]~1'
+        Info: 5: + IC(1.556 ns) + CELL(0.125 ns) = 5.970 ns; Loc. = LC_X5_Y7_N3; Fanout = 2; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|c[4]~2'
+        Info: 6: + IC(0.191 ns) + CELL(0.125 ns) = 6.286 ns; Loc. = LC_X5_Y7_N4; Fanout = 2; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|c[5]~3'
+        Info: 7: + IC(0.445 ns) + CELL(0.571 ns) = 7.302 ns; Loc. = LC_X5_Y7_N0; Fanout = 2; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|c[6]~4'
+        Info: 8: + IC(0.191 ns) + CELL(0.125 ns) = 7.618 ns; Loc. = LC_X5_Y7_N1; Fanout = 2; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|c[7]~5'
+        Info: 9: + IC(0.453 ns) + CELL(0.125 ns) = 8.196 ns; Loc. = LC_X5_Y7_N7; Fanout = 1; COMB Node = 'Full_Add_8bits:From_OutputOfAND_to_FullAdder|s[7]~6'
+        Info: 10: + IC(1.154 ns) + CELL(0.369 ns) = 9.719 ns; Loc. = LC_X3_Y7_N8; Fanout = 4; REG Node = 'Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15]'
+        Info: Total cell delay = 1.815 ns ( 18.67 % )
+        Info: Total interconnect delay = 7.904 ns ( 81.33 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.472 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 45; CLK Node = 'clk'
+            Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X3_Y7_N8; Fanout = 4; REG Node = 'Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15]'
+            Info: Total cell delay = 1.301 ns ( 52.63 % )
+            Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.472 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 45; CLK Node = 'clk'
+            Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X1_Y10_N3; Fanout = 15; REG Node = 'Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]'
+            Info: Total cell delay = 1.301 ns ( 52.63 % )
+            Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Micro setup delay of destination is 0.208 ns
+Info: tsu for register "system_controller:sys_con|counter[2]" (data pin = "start", clock pin = "clk") is 2.367 ns
+    Info: + Longest pin to register delay is 4.631 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_H2; Fanout = 7; PIN Node = 'start'
+        Info: 2: + IC(2.247 ns) + CELL(0.462 ns) = 3.417 ns; Loc. = LC_X12_Y10_N8; Fanout = 3; COMB Node = 'system_controller:sys_con|counter[2]~0'
+        Info: 3: + IC(0.437 ns) + CELL(0.777 ns) = 4.631 ns; Loc. = LC_X12_Y10_N5; Fanout = 3; REG Node = 'system_controller:sys_con|counter[2]'
+        Info: Total cell delay = 1.947 ns ( 42.04 % )
+        Info: Total interconnect delay = 2.684 ns ( 57.96 % )
+    Info: + Micro setup delay of destination is 0.208 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.472 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 45; CLK Node = 'clk'
+        Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X12_Y10_N5; Fanout = 3; REG Node = 'system_controller:sys_con|counter[2]'
+        Info: Total cell delay = 1.301 ns ( 52.63 % )
+        Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+Info: tco from clock "clk" to destination pin "P[13]" through register "Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13]" is 7.232 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.472 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 45; CLK Node = 'clk'
+        Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X3_Y7_N4; Fanout = 4; REG Node = 'Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13]'
+        Info: Total cell delay = 1.301 ns ( 52.63 % )
+        Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Longest register to pin delay is 4.525 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y7_N4; Fanout = 4; REG Node = 'Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13]'
+        Info: 2: + IC(3.071 ns) + CELL(1.454 ns) = 4.525 ns; Loc. = PIN_L15; Fanout = 0; PIN Node = 'P[13]'
+        Info: Total cell delay = 1.454 ns ( 32.13 % )
+        Info: Total interconnect delay = 3.071 ns ( 67.87 % )
+Info: th for register "REG_8bits:From_B_to_multiplicand|reg_signal[0]" (data pin = "B[0]", clock pin = "clk") is -0.798 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.472 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 45; CLK Node = 'clk'
+        Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X1_Y10_N1; Fanout = 2; REG Node = 'REG_8bits:From_B_to_multiplicand|reg_signal[0]'
+        Info: Total cell delay = 1.301 ns ( 52.63 % )
+        Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+    Info: + Micro hold delay of destination is 0.138 ns
+    Info: - Shortest pin to register delay is 3.408 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_R8; Fanout = 1; PIN Node = 'B[0]'
+        Info: 2: + IC(2.525 ns) + CELL(0.175 ns) = 3.408 ns; Loc. = LC_X1_Y10_N1; Fanout = 2; REG Node = 'REG_8bits:From_B_to_multiplicand|reg_signal[0]'
+        Info: Total cell delay = 0.883 ns ( 25.91 % )
+        Info: Total interconnect delay = 2.525 ns ( 74.09 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 186 megabytes
+    Info: Processing ended: Tue Oct 11 00:42:49 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.367 ns
+From           : start
+To             : system_controller:sys_con|counter[0]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.232 ns
+From           : Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[13]
+To             : P[13]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.798 ns
+From           : B[0]
+To             : REG_8bits:From_B_to_multiplicand|reg_signal[0]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 98.41 MHz ( period = 10.162 ns )
+From           : Shift_REG_R_8bits:From_A_to_multiplier|reg_signal[0]
+To             : Shift_REG_R_16bits:From_FullAdder_to_product|reg_signal[15]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

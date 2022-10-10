@@ -1,0 +1,65 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+# Date created = 13:09:10  June 01, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Sequential_Multiplier_8bits_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM2210F324C3
+set_global_assignment -name TOP_LEVEL_ENTITY Sequential_Multiplier_8bits
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:09:10  JUNE 01, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name VHDL_FILE Sequential_Multiplier_8bits.vhd
+set_global_assignment -name VHDL_FILE REG_8bits.vhd
+set_global_assignment -name VHDL_FILE Shift_REG_R_8bits.vhd
+set_global_assignment -name VHDL_FILE Shift_REG_R_16bits.vhd
+set_global_assignment -name VHDL_FILE Full_Add_8bits.vhd
+set_global_assignment -name VHDL_FILE system_controller.vhd
+set_global_assignment -name VHDL_FILE Sequential_multiplier_8bits_tb.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Sequential_Multiplier_8bits.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_WAVEFORM_FILE Full_Adder_Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE REG_8bits_Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Shift_REG_8bits_Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Shift_REG_16bits_Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE System_controller_Waveform.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE System_controller_Waveform.vwf
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"

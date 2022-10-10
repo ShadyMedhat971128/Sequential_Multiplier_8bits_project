@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Sequential_Multiplier_8bits">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Sequential_Multiplier_8bits|system_controller:sys_con|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_elh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

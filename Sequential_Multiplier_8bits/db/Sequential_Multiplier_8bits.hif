@@ -1,0 +1,387 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+45
+3515
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+REG_8bits
+# storage
+db|Sequential_Multiplier_8bits.(1).cnf
+db|Sequential_Multiplier_8bits.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+reg_8bits.vhd
+72ce165d8821cdcc8d3cfab6f5145
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(data_in)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+REG_8bits:From_B_to_multiplicand
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Full_Add_8bits
+# storage
+db|Sequential_Multiplier_8bits.(3).cnf
+db|Sequential_Multiplier_8bits.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+full_add_8bits.vhd
+7817a8c69b571eade983736080188
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(x)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(s)
+8 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Full_Add_8bits:From_OutputOfAND_to_FullAdder
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Sequential_Multiplier_8bits
+# storage
+db|Sequential_Multiplier_8bits.(0).cnf
+db|Sequential_Multiplier_8bits.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sequential_multiplier_8bits.vhd
+87c28dffa7ffc9c6eb7e8c776d867f9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+n
+8
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+|
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Shift_REG_R_16bits
+# storage
+db|Sequential_Multiplier_8bits.(4).cnf
+db|Sequential_Multiplier_8bits.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+shift_reg_r_16bits.vhd
+344ace6d11eda9f863072fc85f91754
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(data_in)
+8 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Shift_REG_R_16bits:From_FullAdder_to_product
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Full_Add_8bits
+# storage
+db|Sequential_Multiplier_8bits.(2).cnf
+db|Sequential_Multiplier_8bits.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+full_add_8bits.vhd
+7817a8c69b571eade983736080188
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+DEF
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+REG_8bits
+# storage
+db|Sequential_Multiplier_8bits.(6).cnf
+db|Sequential_Multiplier_8bits.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+reg_8bits.vhd
+72ce165d8821cdcc8d3cfab6f5145
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+DEF
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Shift_REG_R_8bits
+# storage
+db|Sequential_Multiplier_8bits.(7).cnf
+db|Sequential_Multiplier_8bits.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+shift_reg_r_8bits.vhd
+d3553a37b1ade37a4fed5d515abf64
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+Shift_REG_R_8bits:From_A_to_multiplier
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Shift_REG_R_16bits
+# storage
+db|Sequential_Multiplier_8bits.(8).cnf
+db|Sequential_Multiplier_8bits.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+shift_reg_r_16bits.vhd
+344ace6d11eda9f863072fc85f91754
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+size
+8
+PARAMETER_SIGNED_DEC
+DEF
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+system_controller
+# storage
+db|Sequential_Multiplier_8bits.(5).cnf
+db|Sequential_Multiplier_8bits.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+system_controller.vhd
+52eafcf66b6f105e8f79d44b8ef051e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+system_controller:sys_con
+}
+# lmf
+p:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# complete
+

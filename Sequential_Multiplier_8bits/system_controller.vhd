@@ -1,0 +1,98 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity system_controller is
+port (
+
+in_clk : in std_logic ;
+in_rst, in_start : in std_logic := '0' ;
+
+out_load_multiplier, out_shift_multiplier : out std_logic;
+out_shift_multiplicand : out std_logic;  
+out_reset_product ,out_load_product, out_shift_product : out std_logic;
+out_done : out std_logic := '0'
+);
+end entity;
+
+architecture behave of system_controller is
+-- initializing the states
+TYPE type_fstate IS (S0,S1,S2,S3);
+SIGNAL reg_fstate : type_fstate := S0; 
+begin
+-- process to load the state
+ PROCESS (in_clk,reg_fstate , in_rst , in_start)
+    variable counter : std_logic_vector(2 downto 0) := (others => '0');
+    BEGIN
+    if in_rst = '1' then
+	out_reset_product <= '1';
+	counter := (others => '0');
+	reg_fstate <= S0 ;
+    elsIF rising_edge(in_clk) THEN
+	------------------------
+		case reg_fstate is 
+		when S0 =>
+				out_done <= '0';
+				if in_start = '1' then
+				reg_fstate <= S1;	
+			---------------------------------
+				out_load_product <= '0';
+				out_shift_product <='0';
+				out_shift_multiplier <= '0';
+			----------------------------------
+				out_load_multiplier <= '1';
+				out_shift_multiplicand <= '1';
+				out_reset_product <= '1';
+				counter := (others => '0');
+			-- Inserting 'else' block to prevent latch inference
+                else
+                reg_fstate <= S0;
+				end if;
+		---------------------------------------------------
+		when S1 => 
+			reg_fstate <= S2 ;
+			
+			out_load_multiplier <= '0';
+			out_shift_multiplicand <= '0';
+			out_done <= '0';
+----------------------------------------------------------
+			out_shift_product <='0';
+			out_shift_multiplier <= '0';
+			out_reset_product <= '0';
+			out_load_product <= '1';
+			
+			counter := unsigned(counter)+1; -- first time for S2 , counter == 001 , first summtion 
+			
+		---------------------------------------------------
+		when S2 =>
+			
+			out_load_multiplier <= '0';
+			out_shift_multiplicand <= '0';
+			out_reset_product <= '0';
+			out_done <= '0';
+		----------------------------------
+			out_load_product <= '0';
+			out_shift_product <='1';
+			out_shift_multiplier <= '1';
+			if counter = "000" then
+			reg_fstate <= S3;
+			else
+			reg_fstate <= S1;
+			end if;
+		---------------------------------------------------
+		When S3 => 
+			out_load_multiplier <= '0';
+			out_shift_multiplicand <= '0';
+			out_reset_product <= '0';
+			out_load_product <= '0';
+			out_shift_product <='0';
+			out_shift_multiplier <= '0';
+			------------------------------------------------
+			out_done <= '1';
+			reg_fstate <= S0;
+		---------------------------------------------------
+		end case;
+	end if;
+	end process;
+end behave;
